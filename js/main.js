@@ -7,12 +7,13 @@ function dateTime() {
 }
 
 function weatherBalloon(cityID) {
-	var apiKey = ''; //OpenWeather API key
+	var apiKey = '728d777f3879e9d3282deaa4e9383318'; //OpenWeather API key
 	fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + apiKey)
 		.then(function(resp) {
 			return resp.json()
 		})
 		.then(function(data) {
+			console.log(data)
 			let weatherIcon = data.weather[0].icon;
 			let tempK = parseFloat(data.main.temp);
 			let tempC = Math.round(tempK - 273.15);
