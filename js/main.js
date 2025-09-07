@@ -13,7 +13,6 @@ function weatherBalloon(cityID) {
 			return resp.json()
 		})
 		.then(function(data) {
-			console.log(data)
 			let weatherIcon = data.weather[0].icon;
 			let tempK = parseFloat(data.main.temp);
 			let tempC = Math.round(tempK - 273.15);
